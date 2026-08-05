@@ -70,7 +70,13 @@ streamlit run web_app.py
 ## 项目结构
 
 ```text
-├── web_app.py            # 主应用（Streamlit）
+├── web_app.py            # 主入口：页面布局、会话状态、历史记录（Streamlit）
+├── config.py             # 配置：环境变量与常量（USER_EMAIL、API Key、年份范围）
+├── name_utils.py         # 姓名解析与检索式生成（WOS / Google Scholar）
+├── sources.py            # 数据源：PubMed / OpenAlex / Crossref / Semantic Scholar / DOAJ 检索与结果聚合
+├── search_lock.py        # 全局并发锁（防并发请求与冷却）
+├── search_service.py     # 搜索编排：run_search 串起检索流程
+├── ui.py                 # 页面组件：结果弹窗（show_detail_dialog）
 ├── requirements.txt      # Python 依赖
 ├── .env.example          # 环境变量配置示例
 ├── .gitignore            # 忽略 .env 等文件
