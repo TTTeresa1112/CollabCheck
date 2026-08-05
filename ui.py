@@ -1,5 +1,12 @@
 """页面弹窗组件。"""
+import urllib.parse
 import streamlit as st
+
+
+def build_google_scholar_url(search_term):
+    """将 Google Scholar 检索式转换为可直接打开的搜索 URL。"""
+    params = {"hl": "en", "as_sdt": "0,5", "q": search_term, "btnG": ""}
+    return f"https://scholar.google.com/scholar?{urllib.parse.urlencode(params)}"
 
 
 @st.dialog("Detailed Search Results", width="large")
@@ -32,7 +39,10 @@ def show_detail_dialog(title, date, result_data):
                     st.code(terms.get("wos", "N/A"), language=None)
                 with col2:
                     st.markdown("*Google Scholar:*")
-                    st.code(terms.get("gs", "N/A"), language=None)
+                    gs_term = terms.get("gs", "N/A")
+                    st.code(gs_term, language=None)
+                    if gs_term and gs_term != "N/A" and gs_term != "Could not generate query (missing terms)":
+                        st.markdown(f"[在 Google Scholar 中搜索]({build_google_scholar_url(gs_term)})")
                 st.divider()
     
     st.subheader(f"Found {len(papers)} Potential Collaboration(s)")
