@@ -15,7 +15,7 @@ import uuid
 from enum import Enum
 
 load_dotenv()
-st.set_page_config(page_title="CollabCheck", page_icon="🔍", layout="wide")
+st.set_page_config(page_title="CollabCheck", layout="wide")
 
 # ===== 简洁风格样式 =====
 st.markdown(
@@ -716,7 +716,7 @@ def run_search(fixed_input, candidate_input):
 
 # ===== 侧边栏：说明信息 =====
 with st.sidebar:
-    st.markdown("### 🔍 CollabCheck")
+    st.markdown("### CollabCheck")
     st.caption("作者间潜在利益冲突快速筛查")
     st.divider()
 
@@ -730,7 +730,7 @@ with st.sidebar:
 """
         )
 
-    with st.expander("⚠️ 免责声明", expanded=False):
+    with st.expander("免责声明", expanded=False):
         st.markdown(
             """
 - 本工具自动检索多个学术数据库，结果可能**不精准、有遗漏或误判**，仅供初步筛查参考。
