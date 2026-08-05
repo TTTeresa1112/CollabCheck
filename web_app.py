@@ -469,7 +469,7 @@ class SearchLock:
         elapsed = time.time() - self.last_search_finish_time
         if elapsed < self.COOLDOWN_SECONDS:
             remaining = int(self.COOLDOWN_SECONDS - elapsed)
-            return "cooldown", f"❄️ 系统冷却中，请等待 {remaining} 秒后再试"
+            return "cooldown", f"系统冷却中，请等待 {remaining} 秒后再试"
         
         return "ready", None
 
@@ -720,7 +720,7 @@ with st.sidebar:
     st.caption("作者间潜在利益冲突快速筛查")
     st.divider()
 
-    with st.expander("📖 使用方法", expanded=False):
+    with st.expander("使用方法", expanded=False):
         st.markdown(
             """
 - 每行一位作者，格式：`名; 姓`（例如 `Nancy; Lane`）。
@@ -738,7 +738,7 @@ with st.sidebar:
 """
         )
 
-    with st.expander("ℹ️ 关于 CollabCheck", expanded=False):
+    with st.expander("关于 CollabCheck", expanded=False):
         st.markdown(
             """
 **开源项目**，基于 [MIT License](LICENSE) 协议发布，可自由使用与修改。
@@ -782,11 +782,11 @@ with st.container():
         current_status, current_message = search_lock.get_status()
 
         if current_status == "busy":
-            st.warning("⏳ 系统正在处理其他请求，请稍候... (自动刷新中)")
+            st.warning("系统正在处理其他请求，请稍候... (自动刷新中)")
         elif current_status == "cooldown":
             st.warning(current_message)
         else:
-            st.success("✅ 系统就绪，可以开始搜索")
+            st.success("系统就绪，可以开始搜索")
 
     status_display()
     

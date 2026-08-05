@@ -5,7 +5,7 @@
 
 > 本项目为开源版本，基于 MIT License 发布，欢迎使用、修改与贡献。
 
-## ✨ 功能特性
+## 功能特性
 
 - **多数据库检索**：自动查询 PubMed、OpenAlex、Crossref、Semantic Scholar、DOAJ 五个学术数据源
 - **批量姓名比对**：支持一次输入多位作者，逐一交叉筛查
@@ -15,7 +15,7 @@
 - **会话历史**：保留本次会话的检索记录，可随时回看
 - **并发保护**：内置搜索锁与冷却机制，避免高频请求被 API 限流
 
-## 🚀 快速开始
+## 快速开始
 
 需要 Python 3.9+。
 
@@ -43,7 +43,7 @@ streamlit run web_app.py
 
 浏览器访问 <http://localhost:8501> 即可使用。
 
-## ⚙️ 配置说明
+## 配置说明
 
 | 变量 | 必填 | 默认值 | 说明 |
 | --- | --- | --- | --- |
@@ -56,7 +56,7 @@ streamlit run web_app.py
 - NCBI API Key：<https://www.ncbi.nlm.nih.gov/account/settings/>
 - Semantic Scholar API Key：<https://www.semanticscholar.org/product/api>
 
-## 📖 使用方法
+## 使用方法
 
 1. 在左侧 **Potential COI** 输入潜在利益相关方姓名，**Author(s)** 输入待查作者姓名，每行一位，格式：`名; 姓`（例如 `Nancy; Lane`）
 2. 点击 **Start Search**
@@ -67,7 +67,7 @@ streamlit run web_app.py
 本工具基于多个学术数据库的**自动检索**，结果可能存在不精准、遗漏或误判，仅供初步筛查参考。
 最终结论请以人工核查、论文原文及官方记录为准。
 
-## 📁 项目结构
+## 项目结构
 
 ```text
 ├── web_app.py            # 主应用（Streamlit）
@@ -78,6 +78,6 @@ streamlit run web_app.py
 └── .devcontainer/        # 开发容器配置
 ```
 
-## 📄 许可证
+## 许可证
 
 [MIT License](LICENSE)
